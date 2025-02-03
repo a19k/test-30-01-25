@@ -17,7 +17,7 @@ Ukupan broj elemenata sa tom frekvencijom je 5.
 
 */
 
-let nums = [1,2,2,3,1,4];
+let nums = [1,2,3,100,100,100,4,5,1,1];
 
 const countMaxFrequency = (nums) => {
     nums.sort();
@@ -26,7 +26,7 @@ const countMaxFrequency = (nums) => {
     
 
     let maxFrequency = 0;
-    let counter = 0;
+    let sum = 0;
 
     nums.reduce((acc, e, i, arr) => {
         if (acc === 0 || e === arr[i - 1]) acc++;
@@ -41,11 +41,10 @@ const countMaxFrequency = (nums) => {
         return acc;
     }, 0)
    
-
     nums.reduce((acc, e, i, arr) => {
         if (acc === 0 || e === arr[i - 1]) acc++;
         else if (acc === maxFrequency) {
-            counter++;
+            sum+=acc;
             acc = 1;
         }
         else acc=1;
@@ -53,7 +52,7 @@ const countMaxFrequency = (nums) => {
         return acc;
     },1)
 
-    return counter;
+    return sum;
 }
 
 console.log(countMaxFrequency(nums));

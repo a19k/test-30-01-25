@@ -2,7 +2,7 @@
 
 Ulaz: 
 
-	console.log(obrniString("programiranje"));
+console.log(obrniString("programiranje"));
 console.log(obrniString("javascript"));
 
 Izlaz: 

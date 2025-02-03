@@ -13,16 +13,10 @@ false
 */
 
 const jesuAnagrami=(str1,str2)=>{
-    str1=str1.split().sort();
-    str2=str2.split().sort();
+    str1=str1.split("").sort().join();
+    str2=str2.split("").sort().join();
 
-    let isSame=true
-    
-    str1.forEach((e,i,arr)=>{
-        if(e!==str2[i])isSame=false;
-    });
-
-    return isSame;
+    return str1 === str2;
 }
 
 
